@@ -120,6 +120,9 @@ public:
     }
     Kolekcija<T1, T2> operator()(int pocetak, int kraj)
     {
+    if (pocetak < 0 || kraj > _trenutno) {
+			throw exception("Izisli ste van opsega.");
+		}
         Kolekcija<T1, T2> nova;
         for (pocetak; pocetak <= kraj; pocetak++)
             nova.AddElement(_elementi1[pocetak], _elementi2[pocetak]);
